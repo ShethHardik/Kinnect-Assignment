@@ -1,0 +1,28 @@
+<div class="card text-center">
+    <div class="card-header">
+      <b>Math Addition Game</b>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <span style="float: left; color: blue">Timer : {{counter | formatTime}}</span>
+            </div>
+            <div  class="col-md-6">
+                <span *ngIf="countQuestions > 0" style="float: right">Average Time : {{averageTime}}</span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <h6>
+                {{randomNumber1}} + {{randomNumber2}} = <input type="text" #sum matInput name="sum" (change)="calculate(sum.value)"/>
+            </h6>
+        </div>
+
+        <div class="row">
+            <span *ngIf="showMessage" [ngStyle]="{'color' : setMessageColor()}">
+                {{message}}
+            </span><br />
+        </div>
+    
+    </div>
+</div>
